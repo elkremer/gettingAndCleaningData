@@ -62,7 +62,7 @@ fn<-function(x) {
 fn(finalData)
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-melted<-melt(finalData, id.vars = c("subject", "activityId"))
+#melted<-melt(finalData, id.vars = c("subject", "activityId"))
 tidyData<-group_by(finalData, subject, activityId) %>% summarize_each("mean")
 
 write.table(tidyData,"tidyData.txt", row.names = FALSE)
